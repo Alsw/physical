@@ -81,7 +81,7 @@
 }
 .main_a a{
 	display: block;
-	margin: o auto;
+	margin: 0 auto;
 	width: 88px;
 	height: 35px;
 	text-align: center;
@@ -97,4 +97,19 @@
 }
 .main_content:after{
 	clear: both;
+}
+.yuyue{
+	text-align: center;
+}
+.yuyue a{
+	display: block;
+	margin: 0 auto;
+	width: 88px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	color:#2f98db ;
+	border: 1px solid #2f98db;
+	border-radius: 2px;
+	text-decoration: none;
 }

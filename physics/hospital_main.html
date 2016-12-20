@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>套餐列表</title>
+	</head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/header.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="js/angular.js"></script>
+	<body>
+		<header>
+			<div id="header_content">
+				<div id="header_logo">
+					<img src="img/logo.jpg" />
+				</div>
+				<div id="header_ul">
+					<ul class="nav nav-pills" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#">主页</a>
+						</li>
+						<li role="presentation">
+							<a href="#">体检中心</a>
+						</li>
+						<li role="presentation">
+							<a href="#">预约</a>
+						</li>
+						<li role="presentation">
+							<a href="#">登录</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="main">
+				<div class="main_select">
+					<div>
+						<h4>
+					 		<span>解放军杭州疗养院</span>
+					 	</h4>
+					</div>
+					<div class="selects">
+						<div class="select_opt">
+							<div>
+								<p>地址:<span>浙江省杭州市西湖区杨公堤27号(东门);龙井路5号(西门)</span></p>
+							</div>
+						</div>
+						<div class="">
+
+							<p style="text-indent: 2em;"> 疗养院始建于1950年，下辖5个医疗、疗养机构，是全军组建最早、级别最高、规模最大、 技术力量最强、仪器设备、最先进的军队大型疗养保健基地，中央军委、总部首长及军地高级干部的健康管理、 养生保健和康复疗养基地，以 及航天员、飞行员潜水员、潜艇艇员等特勤人员的疗养康复基地。多次圆满完成我国全体航天英雄、 全军英模疗养团及省部级领导的健康体检和康复疗养保障任务， 先后被表彰为“全军先进疗养院”、“全军保健工作先进集体”。 近年来，解放军杭州疗养院坚持创新发展、科学发展、全面发展，突出学科建设，着力打造品牌。现有全军专科中心3个， 军区专科中心5个，先后获军地科研成果奖数十项，60多名专家在国家、军队、省部级各类学术组织任职，10多项在研课题为国家科技支撑计划项目和全军、 军区重点课题，尤其在健康管理、创伤康复和中医“治未病”等方面，形成了鲜明的技术特色和优势。 </p>
+
+						</div>
+					</div>
+				</div>
+				<div class="main_content">
+					<h3>套餐列表</h3>
+					<div style="width: 100%;height: 1px;background: #357EBD;"></div>
+					<ul>
+						<li>
+							<dl>
+								<dt>
+									<a href=""><img src="img/01_big.jpg"/></a>
+								</dt>
+								<dd>
+									<h4>套餐A，一档套餐</h4>
+									<p>适宜人群:<span>所有人</span></p>
+								</dd>
+							</dl>
+							<div class="main_a">
+								<a href="#">立刻预约</a>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<dl>
+								<dt>
+									<a href=""><img src="img/01_big.jpg"/></a>
+								</dt>
+								<dd>
+									<h4>套餐A，一档套餐</h4>
+									<p>适宜人群:<span>所有人</span></p>
+								</dd>
+							</dl>
+							<div class="main_a">
+								<a href="#">立刻预约</a>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<div style="height: 100px;"></div>
+	</body>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$('.nav>li>a').click(function() {
+			$(this).parent().parent().children().removeClass('active');
+			$(this).parent().addClass('active');
+		})
+	</script>
+</html>
