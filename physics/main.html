@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>体检中心</title>
+	</head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/header.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="js/angular.js"></script>
+
+	<body>
+		<header>
+			<div id="header_content">
+				<div id="header_logo">
+					<img src="img/logo.jpg" />
+				</div>
+				<div id="header_ul">
+					<ul class="nav nav-pills" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#">主页</a>
+						</li>
+						<li role="presentation">
+							<a href="#">体检中心</a>
+						</li>
+						<li role="presentation">
+							<a href="#">预约</a>
+						</li>
+						<li role="presentation">
+							<a href="#">登录</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="main">
+				<div class="main_select">
+					<div>
+						<h4>
+					 		<span>筛选条件</span>
+					 	</h4>
+					</div>
+					<div class="selects">
+						<div class="select_opt">
+							<div>
+								<a>区域</a>
+								<a>不限</a>
+								<a>杭州</a>
+								<a>上海</a>
+							</div>
+						</div>
+						<div class="select_opt">
+							<div>
+								<a>类型</a>
+								<a>不限</a>
+								<a>专业体检中心</a>
+								<a>公立医院</a>
+								<a>私立医院</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main_content">
+					<h3>支持以下120家公司</h3>
+					<div style="width: 100%;height: 1px;background: #357EBD;"></div>
+					<ul>
+						<li>
+							<dl>
+								<dt>
+									<a href=""><img src="img/01_big.jpg"/></a>
+								</dt>
+								<dd>
+									<h4>解放军疗养医院</h4>
+									<p>
+										<span>类型:</span>
+										<span>专业体检中心</span>
+									</p>
+									<p>浙江省杭州市西湖区杨公堤27号(东门);龙井路5号(西门)</p>
+								</dd>
+							</dl>
+							<div class="main_a">
+								<a href="#">查看</a>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<dl>
+								<dt>
+									<a href=""><img src="img/01_big.jpg"/></a>
+								</dt>
+								<dd>
+									<h4>解放军疗养医院</h4>
+									<p>
+										<span>类型:</span>
+										<span>专业体检中心</span>
+									</p>
+									<p>浙江省杭州市西湖区杨公堤27号(东门);龙井路5号(西门)</p>
+								</dd>
+							</dl>
+							<div class="main_a">
+								<a href="#">查看</a>
+							</div>
+						</li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<div style="height: 100px;"></div>
+	</body>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$('.nav>li>a').click(function() {
+			$(this).parent().parent().children().removeClass('active');
+			$(this).parent().addClass('active');
+		})
+	</script>
+
+</html>

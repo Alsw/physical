@@ -1,0 +1,100 @@
+.main {
+	width: 100%;
+	margin-top: 30px;
+}
+
+.main_select {
+	width: inherit;
+	height: auto;
+	background: #fff;
+	padding: 10px 0 20px 20px;
+}
+
+.main_content {
+	width: inherit;
+	height: 500px;
+	background: #fff;
+	margin-top: 20px;
+}
+
+.selects {
+	border: 1px solid #ededed;
+}
+
+.select_opt {
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px dashed #ededed;
+	padding-left: 8px;
+}
+
+.select_opt span {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.select_opt a {
+	display: inline-block;
+	margin-right: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	color: #333;
+}
+
+.select_opt div a:nth-child(2) {
+	color: #2f98db;
+}
+.main_content{
+	padding-left: 15px;
+	padding-top: 10px;
+}
+.main_content ul {
+	padding-left: 0px;
+}
+
+.main_content ul li {
+	padding: 15px 20px 0px 0;
+	min-height: 140px;
+	border-bottom: 1px dashed #ededed;
+	overflow: hidden;
+}
+
+.main_content ul dl,
+.main_content ul dd,
+.main_content ul dt {
+	margin: 0;
+	float: left;
+
+}
+.main_content ul dd{
+	padding-left: 20px;
+}
+.main_content ul dt a img {
+	width: 155px;
+	height: 100px;
+}
+
+.main_a{
+	width: 150px;
+	float: right;
+	margin: 30px;
+}
+.main_a a{
+	display: block;
+	margin: o auto;
+	width: 88px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	color:#2f98db ;
+	border: 1px solid #2f98db;
+	border-radius: 2px;
+	text-decoration: none;
+}
+.main_a a:hover{
+	background: #2f98db;
+	color: #fff;
+}
+.main_content:after{
+	clear: both;
+}
