@@ -1,0 +1,149 @@
+body {
+	background: #f8f8f8;
+}
+
+a img {
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+a:hover,
+a.green {
+	color: #2f98db;
+}
+.main_section {
+	width: 990px;
+	margin: 0 auto;
+}
+
+.titles {
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e2e2e2;
+	font: 12px/1.3 "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, 宋体, Arial, Verdana, sans-serif;
+}
+
+.titles a {
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+	color: #999;
+}
+
+.hospital_list {
+	width: 100%;
+	height: 515px;
+	padding-top: 25px;
+	padding-left: 15px;
+	margin: 0 auto;
+}
+
+.hospital_list:after {
+	clear: both;
+}
+
+.hospital_list dl {
+	background-color: #fff;
+	border: 1px solid #fff;
+	float: left;
+	margin: 0 12px 20px 0;
+	padding: 4px;
+	width: 229px;
+	height: 215px;
+	overflow: hidden;
+}
+
+.hospital_list dt {
+	position: relative;
+}
+
+.hospital_name a {
+	color: #333;
+	text-decoration: none;
+}
+
+.hospital_list dt a img {
+	width: 229px;
+	height: 148px;
+}
+
+.hospital_list dd {}
+
+.hospital_name {
+	border-bottom: 1px dashed #ddd;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	padding-bottom: 2px;
+}
+
+.hospital_type {
+	font-size: 12px;
+	line-height: 36px;
+	padding-bottom: 1px;
+	color: #999;
+}
+
+.hospital_type span:last-child {
+	float: right;
+}
+
+.hospital_type span:last-child:after {
+	clear: both;
+}
+
+.colors {
+	width: 100%;
+}
+
+.colors:nth-child(2n+1) {
+	background: #f8f8f8;
+}
+
+.colors:nth-child(2n+4) {
+	background: #fff;
+}
+
+.yuyue_steps {
+	margin: 10px 0 50px
+}
+
+.yuyue_steps ul {
+	margin-left: -50px;
+}
+
+.yuyue_steps li {
+	float: left;
+	width: 140px;
+	margin-right: 60px;
+	text-align: center;
+	color: #666;
+	font-size: 18px;
+}
+
+footer div {
+	width: 990px;
+	margin: 0 auto;
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
+
+footer div .foot_help {
+	float: left;
+	width: 30%;
+	text-align: center;
+	border-right: 1px dashed #ddd;
+}
+
+footer div .foot_connect {
+	float: left;
+	width: 60%;
+	text-align: center;
+}

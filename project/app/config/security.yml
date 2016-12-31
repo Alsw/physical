@@ -1,0 +1,41 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        in_memory:
+            memory:
+                users:
+                    bobo:  { password: bobo, roles: 'ROLE_USER' }
+                    admin: { password: admin, roles: 'ROLE_ADMIN' }
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+
+            form_login:
+                login_path: login
+                check_path: login
+            # http_basic: ~
+            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    access_control:
+        - { path: ^/users, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+    # providers:
+    #     in_memory:
+    #         memory:
+                # users:
+                #     bobo:  { password: bobo, roles: 'ROLE_USER' }
+                #     admin: { password: admin, roles: 'ROLE_ADMIN' }
