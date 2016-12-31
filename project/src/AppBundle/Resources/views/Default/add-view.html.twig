@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新增页面</title>
+  <link rel="stylesheet" type="text/css" href="../src/Resources/Public/css/style.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../src/Resources/Public/css/main.css">
+</head>
+<body>
+  <div class="W1024">
+    <br/>
+    <fieldset style='width:60%; height: 320px;'>
+      <legend>填写用户信息</legend>
+      <br/>
+      <form action="index.php?controller=user&action=add" method="post">
+        <div class='line'>
+          <div align="left" class='leftDiv'>姓名：</div>
+          <div align="left" class='rightDiv'>
+            <input type="text" name="username" value="">
+          </div>
+        </div>
+        <div class='line'>
+            <div align="left" class='leftDiv'>性别:</div>
+            <div align="left" class='rightDiv'>
+              <input type="text" name="sex" value="">
+            </div>
+        </div>
+        <div class='line'>
+          <div align="left" class='leftDiv'>年龄:</div>
+          <div align="left" class='rightDiv'>
+              <input type="text" name="age" value="">
+          </div>
+        </div>
+        <div class='line'>
+          <div align="left" class='leftDiv'>个人介绍:</div>
+          <div align="left" class='rightDiv'>
+            <textarea rows="3" name="introduce">请填写个人介绍...</textarea>
+          </div>
+
+        </div>
+        <div class='line' style="margin-top: 30px;">
+          <div align="left" class='leftDiv'></div>
+          <div align="left" class='rightDiv'>
+            <br/>
+            <input type="submit" name="btn" value="提交信息" class="btn">
+            <br/>
+          </div>
+        </div>
+      </form>
+      </fieldset>
+  </div>
+</body>
+</html>

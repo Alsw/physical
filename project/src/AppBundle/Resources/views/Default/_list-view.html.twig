@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>用户列表</title>
+  <link rel="stylesheet" type="text/css" href="../src/Resources/Public/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../src/Resources/Public/css/main.css">
+  <script src="../src/Resources/Public/js/jquery-1.9.1.js"></script>
+</head>
+<body>
+  <div class="W1024 wrapper header">
+    <div class="PTit20">
+      <h2>用户管理</h2>
+    </div>
+    <div class="FR">
+        <button id="addUser" class="btn">新增用户</button>
+    </div>
+  </div>
+    <div class="W1024" id="addArea" style="display: none;">
+    <br/>
+    <fieldset style='width:60%; height: 320px;'>
+      <legend>填写用户信息</legend>
+      <br/>
+      <form method="post" id="addForm">
+        <div class='line' style="display: none;">
+          <div align="left" class='leftDiv'>ID：</div>
+          <div align="left" class='rightDiv'>
+            <input type="text" name="id" value="">
+          </div>
+        </div>
+        <div class='line'>
+          <div align="left" class='leftDiv'>姓名：</div>
+          <div align="left" class='rightDiv'>
+            <input type="text" name="username" value="">
+          </div>
+        </div>
+        <div class='line'>
+            <div align="left" class='leftDiv'>性别:</div>
+            <div align="left" class='rightDiv'>
+              <input type="text" name="sex" value="">
+            </div>
+        </div>
+        <div class='line'>
+          <div align="left" class='leftDiv'>年龄:</div>
+          <div align="left" class='rightDiv'>
+              <input type="text" name="age" value="">
+          </div>
+        </div>
+        <div class='line'>
+          <div align="left" class='leftDiv'>个人介绍:</div>
+          <div align="left" class='rightDiv'>
+            <textarea rows="3" name="introduce">请填写个人介绍...</textarea>
+          </div>
+
+        </div>
+        <div class='line' style="margin-top: 30px;">
+          <div align="left" class='leftDiv'></div>
+          <div align="left" class='rightDiv'>
+            <br/>
+            <input type="submit" name="btn" value="提交信息" class="btn">
+            <br/>
+          </div>
+        </div>
+      </form>
+      </fieldset>
+  </div>
+  <div class="wrapper W1024">
+    <table class="dataintable">
+      <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>介绍</th>
+        <th class=" btn-center">操作</th>
+      </tr>
+        {% for user in users %}  
+         
+      <tr>
+        <td>{{ user['id'] }}</td>
+        <td>{{ user['username'] }}</td>
+        <td>{{ user['sex'] }}</td>
+        <td>{{ user['age'] }}</td>
+        <td>{{ user['introduce'] }}</td>
+        <td>
+          <div class="FL td-center" method="post" >
+            <button name="update" class="btn">修改</button>
+          </div>
+          <div class="FL td-center" method="post">
+            <button name="delete" class="btn">删除</button>
+          </div>
+        </td>
+      </tr>
+       {% endfor %}  
+    </table>
+  </div>
+</body>
+<script type="text/javascript">
+var action;
+  $(function(){
+    $("#addUser").click(function(event) {
+      if($("#addArea").css("display")=="none"){
+        action = 'add';
+        $("#addArea").show();
+      }else{
+        $("#addArea").hide();
+      }
+    });
+    $('#addForm').submit(function(e){
+      e.preventDefault();
+      $.ajax({
+        url: 'index.php?controller=user&action='+action,
+        type: 'POST',
+        dataType: 'json',
+        data: $(this).serialize(),
+      })
+      .done(function(data) {
+        if (data.status == "1") {
+          if (action == 'add') {
+            var html = '<tr>'+
+              '<td>'+data.data.id+'</td>'+
+              '<td>'+data.data.username+'</td>'+
+              '<td>'+data.data.sex+'</td>'+
+              '<td>'+data.data.age+'</td>'+
+              '<td>'+data.data.introduce+'</td>'+
+              '<td>'+
+                '<div class="FL td-center">'+
+                  '<button name="udate" class="btn">修改</button>'+
+                '</div>'+    
+                 '<div class="FL td-center">'+
+                   '<button name="delete" class="btn">删除</button>'+
+                 '</div>'+
+               '</td>'+
+            '</tr>';
+            // console.log(data.data);
+            $("#addArea").hide();
+            $("#addArea:input").val('');
+            $("table").append(html);
+          } else if (action == 'modify'){
+            $("table tr").each(function() {
+               if ($(this).children().eq(0).text() == data.data.id) {
+                $(this).children().eq(1).text(data.data.username);
+                $(this).children().eq(2).text(data.data.sex);
+                $(this).children().eq(3).text(data.data.age);
+                $(this).children().eq(4).text(data.data.introduce);
+               }
+            });
+            $("#addArea").hide();
+          }
+        }
+      });     
+    });
+    $("[name=delete]").click(function(e){
+     e.preventDefault();
+     var id = $(this).parent().parent().parent().children().eq(0).text();
+     $.ajax({
+       url: 'index.php?controller=user&action=del',
+       type: 'POST',
+       dataType: 'json',
+       data: {id: id},
+     })
+     .done(function(data) {
+       if (data.status == "1") {
+        $("table tr").each(function() {
+           if ($(this).children().eq(0).text() == data.data.id) {
+            $(this).remove();
+           }
+        });
+       }
+     });
+    });
+    $("[name=update]").click(function(event) {
+      event.preventDefault();
+      var id = $(this).parent().parent().parent().children().eq(0).text();
+      $.ajax({
+        url: 'index.php?controller=user&action=modify',
+        type: 'POST',
+        dataType: 'json',
+        data: {id: id},
+      })
+      .done(function(data) {
+        if (data.status == "1") {
+          $("input[name=id]").val(data.data.id);
+          $("input[name=username]").val(data.data.username);
+          $("input[name=sex]").val(data.data.sex);
+          $("input[name=age]").val(data.data.age);
+          $("textarea[name=introduce]").val(data.data.introduce);
+          action = 'modify';
+          $("#addArea").show();
+        }
+      });
+      
+    });
+  })
+</script>
+</html>

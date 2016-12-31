@@ -1,0 +1,66 @@
+select { 
+  height:20px; 
+  width:300px; 
+}
+table.dataintable {
+  border: 1px solid #888888;
+  border-collapse: collapse;
+  font-family: Arial,Helvetica,sans-serif;
+  margin-top: 10px;
+  width: 100%;
+}
+table.dataintable th {
+  background-color: #CCCCCC;
+  border: 1px solid #888888;
+  padding: 5px 15px 5px 5px;
+  text-align: center;
+  vertical-align: baseline;
+  }
+table.dataintable td {
+  word-break:break-all; 
+  word-wrap:break-word;
+  text-align: center;
+  background-color: #EFEFEF;
+  border: 1px solid #AAAAAA;
+  vertical-align: text-top;
+}
+.header{
+  margin-top: 50px;
+}
+.title {
+  font-size: 16px; 
+  padding: 10px; 
+  width:80%; 
+}
+.text {
+  height:20px; 
+  width:300px; 
+  border:1px solid #AAAAAA; 
+}
+.line {
+    margin:2px;
+  }
+.leftDiv {
+  width:110px; 
+  float:left; 
+  height:22px; 
+  line-height:22px; 
+  font-weight:bold; 
+}
+.rightDiv {
+  height:42px; 
+}
+.btn {
+  padding: 0 20px;  
+  text-align: center;  
+  text-decoration: none;  
+  font: bold 12px/22px Arial, sans-serif;
+  color: #19667d;  
+  background: #70c9e3;
+}
+.btn-center{
+  width: 200px;
+}
+.td-center{
+  margin-left: 25px;
+}
