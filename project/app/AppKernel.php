@@ -2,9 +2,28 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Pimple\Container;
+use Service\UserProvider;
+use Symfony\Component\HttpFoundation\Request;
+use Codeages\Biz\Framework\Provider\DoctrineServiceProvider;
 
 class AppKernel extends Kernel
 {
+    public function boot()
+    {
+        parent::boot();
+        $biz = $this->getContainer()->get('biz');
+        $biz['migration.directories'][] = dirname(__DIR__) . '/migrations';
+        $biz->register(new DoctrineServiceProvider());
+        $biz->boot();
+    }
+
+    public function setRequest(Request $request)
+    {
+        $this->request = $request;
+        return $this;
+    }
+    
     public function registerBundles()
     {
         $bundles = array(
